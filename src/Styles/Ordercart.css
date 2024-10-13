@@ -1,0 +1,33 @@
+.ordercartmain{
+    height: 90px;
+    width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    overflow: hidden;
+    display: flex;flex-direction: row;
+    z-index: 35;
+}
+
+.imgdiv{
+    height:100%;width: 27%;
+    overflow: hidden;
+    display: flex;align-items: center;justify-content: center;
+}
+
+.ordername{
+    height: 100%;width: 60%;font-size: 13px;overflow: hidden;row-gap: -10;font-weight: 500;
+}
+
+.iconadd{
+    overflow: hidden;width: 30%;
+}
+.iconfordelet:hover{
+color: red;
+}
+.iconfordelet{margin-left:67px;}
+.iconfornumber{margin-right: 10px;
+    margin-top: 8px;
+}

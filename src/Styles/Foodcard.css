@@ -1,0 +1,23 @@
+.card{
+    width: 18rem;
+background-color: white;
+}
+.card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+}
+.buttonadd{
+    all: unset;
+    height: 30px;width: 100px;
+    background-color: #22c55e;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+.buttonadd:hover{
+    background-color: #159f48;
+}

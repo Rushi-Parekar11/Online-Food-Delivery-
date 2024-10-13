@@ -1,0 +1,26 @@
+
+.cat-main{
+    height: auto;background-color: gray;
+}
+    .cat-head{padding-left: 25px;font-weight: 500;color: rgb(68, 68, 68);background-color: #f4f4f4;font-size: 28px;}
+
+.cat-head{
+    height: 6vh;
+}
+.spancat{
+    height: 60px;background-color: #e5e7eb;margin-left: 20px;
+    width: max-content;padding: 10px 12px 10px 12px ;border-radius: 4px;
+}
+.spancat:hover{
+    background-color: #22c55e;color: white;cursor: pointer;
+}
+.spancat:active{
+    background-color: #22c55e;color: white;
+}
+.btngroup{
+    padding-top: 25px;overflow: hidden;padding-bottom: 10px;background-color: #f4f4f4;
+}
+
+h5{
+    all:unset;
+}

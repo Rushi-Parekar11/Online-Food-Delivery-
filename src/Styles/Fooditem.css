@@ -1,0 +1,15 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.allinone{
+width: 100%;
+height: max-content;
+background-color: #f4f4f4;
+display: flex; flex-wrap: wrap;gap: 70px;
+padding-left: 40px;
+padding-top: 50px;
+padding-bottom: 50px;
+}
