@@ -12,10 +12,10 @@
     width: max-content;padding: 10px 12px 10px 12px ;border-radius: 4px;
 }
 .spancat:hover{
-    background-color: #22c55e;color: white;cursor: pointer;
+    background-color: #dc2626;color: white;cursor: pointer;
 }
 .spancat:active{
-    background-color: #22c55e;color: white;
+    background-color: #dc2626;color: white;
 }
 .btngroup{
     padding-top: 25px;overflow: hidden;padding-bottom: 10px;background-color: #f4f4f4;

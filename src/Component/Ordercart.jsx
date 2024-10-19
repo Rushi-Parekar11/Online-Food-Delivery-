@@ -1,10 +1,11 @@
-import React from 'react'
+import {React,useState} from 'react'
 import "../Styles/Ordercart.css"
 import { RxCross2 } from "react-icons/rx";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
 
-function Ordercart({cartdata,AfterDelet}) {
+function Ordercart({cartdata,AfterDelet,itemCount,itemCountMinus}) {
+  const[count,setcount]=useState(1)
 
 
 
@@ -23,9 +24,9 @@ function Ordercart({cartdata,AfterDelet}) {
           <RxCross2 onClick={()=>AfterDelet(cartdata.id)} style={{height:'18px',width:'18px'}}/>
         </div>
         <div className="iconfornumber" style={{paddingTop:'7px'}}>
-          <FaPlus style={{height: '14px'}} />
-          <span style={{fontSize: 'large', padding: '0px 8px', borderRadius: '5px', margin: '0px 9px',color:'white',backgroundColor:'#22c55e'}}>1</span>
-          <FaMinus style={{height: '14px'}} />
+        <FaMinus style={{height: '14px'}} onClick={() => {if (count <= 1) {AfterDelet(cartdata.id)} else {itemCountMinus(cartdata.price);setcount(count - 1);}}} />     
+             <span style={{fontSize: 'large', padding: '0px 8px', borderRadius: '5px', margin: '0px 9px',color:'white',backgroundColor:'#22c55e'}}>{count}</span>
+          <FaPlus style={{height: '14px'}} onClick={()=>{itemCount(cartdata.price);setcount(count+1)}} />
         </div>
       </div>
     </div>

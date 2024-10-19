@@ -1,0 +1,17 @@
+.heroSection{
+    height: 85vh;width: 100vw;
+    background-color: #f4f4f4;
+    display: flex;
+}
+.part{
+    height: 85vh;width: 50%;
+    display: flex;align-items: center;justify-content: center;
+}
+.imgdiv{
+    transform: scaleX(-1);
+    }
+
+.gol{
+    height: 30px;width: 30px;
+    background-color: #dc2626;color: white;
+}

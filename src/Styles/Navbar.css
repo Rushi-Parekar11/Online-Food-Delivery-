@@ -7,7 +7,9 @@
 nav{
     display: flex;
     height: 16vh;width: 100%;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
+    background-color: #ffffff;
+
 }
 
 .nav-first{
@@ -40,4 +42,7 @@ nav{
     }
   }
 
+  #iconnav{
+    height: 30px;width: 30px;margin-top:20px ;margin-right: 40px;
+  }
  

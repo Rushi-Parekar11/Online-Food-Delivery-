@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Navbar from '../Component/Navbar';
 import Category from '../Component/Category';
 import Fooditem from '../Component/Fooditem';
 import FoodData from "../Data/FoodData.js"
+import HeroSection from '../Component/HeroSection.jsx';
 import { FaCartShopping } from "react-icons/fa6";
 import "../Styles/Home.css"
 import Cart from '../Component/Cart.jsx';
-import {toast } from 'react-toastify';
+import {toast } from 'react-toastify';                  ///toastify import
 
 
 function Home() {
@@ -34,13 +35,14 @@ const[sortdata,setsortdata]=useState(FoodData)
     addCartData.forEach((product)=>{
       if(cartInfo.id===product.id)
       {  isPresent=true; 
-        toast.error("Item alrady Present in Cart!")
+        toast.error("Item already in Cart!")
        }
     });
     if(isPresent)return;
     if (addCartData.length < 5) {
       setaddCartData([...addCartData, cartInfo]);
       toast.success("Item added to cart !")
+
     } else {
       toast.error("Cart is Full !")
     }
@@ -52,15 +54,29 @@ const[sortdata,setsortdata]=useState(FoodData)
       const updatedData = addCartData.filter((allitem) => allitem.id !== IdForDelete);
       setaddCartData(updatedData)
     }
+
+    ///for dark mood
+    const [mood,setmood]=useState(true);
+    const moodFunct=()=>{
+      setmood(!mood);
+    }
+
+    ///for scroll
+    const sectionRef=useRef(null);
+    const handalscroll=()=>{
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  
   return (
     <>
-      <Navbar/>  
-      <Category GetCategory={GetCategory}/>
-      <Fooditem FoodData={sortdata} AddDataFunction={AddDataFunction} />
+      <div id='sticky'><Navbar moodFunct={moodFunct} mood={mood}/> </div> 
+      <HeroSection mood={mood} handalscroll={handalscroll}/>
+      <Category GetCategory={GetCategory} mood={mood}/>
+      <div ref={sectionRef}><Fooditem FoodData={sortdata} AddDataFunction={AddDataFunction} mood={mood}/></div>
+
+
     
-            {addCartData.length>0 && (conditions ?<div  className="arrlenght">{addCartData.length}</div>:'') }
-
-
+      {addCartData.length>0 && (conditions ?<div  className="arrlenght">{addCartData.length}</div>:'') }
       <span className="conditional" >
       {conditions ? <div className="carticon"><FaCartShopping id='idcarticon' onClick={conditionchange}/></div>:
       <Cart addCartData={addCartData} conditionchange={conditionchange} AfterDelet={AfterDelet}/>}

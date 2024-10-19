@@ -12,12 +12,12 @@ background-color: white;
 .buttonadd{
     all: unset;
     height: 30px;width: 100px;
-    background-color: #22c55e;
+    background-color: #ff6767;
     text-align: center;
     color: white;
     border-radius: 4px;
     margin-top: 20px;
 }
 .buttonadd:hover{
-    background-color: #159f48;
+    background-color: #dc2626;
 }

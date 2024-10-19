@@ -4,7 +4,7 @@
     background-color: white;
     overflow: hidden;
     transition: right 1s ease-in-out;
-    z-index: 11;
+    z-index: 30;
 }
 .cartmainbox.active {
     right: -22vh; 
@@ -32,7 +32,7 @@
 height: 29px;width: 29px;
 }
 .noicon1:hover{
-    color: #22c55e;
+    color: #26dc7b;
     }
 
 .orderitem{
@@ -53,11 +53,11 @@ height: 29px;width: 29px;
     all: unset;
     height: 40px;
     width: 80%;
-    background-color:#22c55e;
+    background-color:#dc2626;
     color: white;
     text-align: center;border-radius: 7px;
     margin-left: 30px;
 }
 .Checkout:hover{
-    background-color: #0b8136;
+    background-color: #dc2626;
 }
