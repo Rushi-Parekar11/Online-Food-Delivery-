@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import "../Styles/Cart.css"
 import Ordercart from './Ordercart';
+import { useAuth0 } from "@auth0/auth0-react";
 import { RxCrossCircled } from "react-icons/rx";
 
 
 
+
 function Cart({conditionchange,addCartData,AfterDelet}) {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+const { loginWithRedirect } = useAuth0();
 
   const itemCount=(getidPrice)=>{
     settotalP((prevTotal) => prevTotal + getidPrice);
@@ -40,7 +44,7 @@ function Cart({conditionchange,addCartData,AfterDelet}) {
           Item:{addCartData.length}<br />
           Total Amount: {totalPrice+totalP} ₹<br />
           <hr />
-          <button className="Checkout">Checkout</button>
+        {isAuthenticated ?  <button className="Checkout">Checkout</button>:<button type="button" id='loginbtncart' className="btn btn-primary" onClick={() => loginWithRedirect()}>Login</button>} 
         </div>
       </div>
     </>

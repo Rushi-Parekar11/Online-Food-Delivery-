@@ -4,12 +4,10 @@ import { CgProfile } from "react-icons/cg";
 import { LuMoon } from "react-icons/lu";
 import { TiWeatherSunny } from "react-icons/ti";
 import { useAuth0 } from "@auth0/auth0-react";
-import Profile from '../Pages/Profile';
-import { Routes,Route, Link } from "react-router-dom"
 import "../Styles/Navbar.css"
 
 
-function Navbar({ moodFunct, mood, addCartData, conditions, conditionchange }) {
+function Navbar({ moodFunct, mood, addCartData, conditions, conditionchange,profileFUN}) {
   const { loginWithRedirect } = useAuth0();
   const { user, isAuthenticated, isLoading } = useAuth0();
 
@@ -31,14 +29,11 @@ function Navbar({ moodFunct, mood, addCartData, conditions, conditionchange }) {
 
         {/* <CgProfile id='iconnav' /> */}
 
-        {isAuthenticated ? <Link to="/Profile" ><CgProfile id='iconnav' /></Link> : <button type="button" id='loginbtn' className="btn btn-primary" onClick={() => loginWithRedirect()}>Login</button>}
+        {isAuthenticated ? <CgProfile id='iconnav' onClick={profileFUN}  /> : <button type="button" id='loginbtn' className="btn btn-primary" onClick={() => loginWithRedirect()}>Login</button>}
 
       </div>
     </nav>
 
-<Routes>
-<Route  path='/Profile' element={<Profile/>}/>
-</Routes>
 
 
   </>

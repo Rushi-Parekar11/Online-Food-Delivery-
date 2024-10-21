@@ -6,7 +6,9 @@ import FoodData from "../Data/FoodData.js";
 import HeroSection from '../Component/HeroSection.jsx';
 import { FaCartShopping } from "react-icons/fa6";
 import "../Styles/Home.css";
+import { Routes,Route, Link } from "react-router-dom"
 import Cart from '../Component/Cart.jsx';
+import Profile from '../Pages/Profile';
 import { toast } from 'react-toastify';  // toastify import
 
 function Home() {
@@ -93,11 +95,24 @@ function Home() {
     }
   }, [addCartData]);
 
+
+
+  ///profile open 
+
+  const [profile,setprofile]=useState(true);
+  const profileFUN=()=>{
+      setprofile(!profile);
+  }
+
   return (
     <>
       <div id='sticky'>
-        <Navbar moodFunct={moodFunct} mood={mood} addCartData={addCartData} conditions={conditions} conditionchange={conditionchange} />
+        <Navbar moodFunct={moodFunct} mood={mood} addCartData={addCartData} conditions={conditions} conditionchange={conditionchange} profileFUN={profileFUN}/>
       </div>
+
+
+{profile ?
+<div>
       <HeroSection mood={mood} handalscroll={handalscroll} />
       <Category GetCategory={GetCategory} mood={mood} />
       <div ref={sectionRef}>
@@ -114,6 +129,11 @@ function Home() {
           <Cart addCartData={addCartData} conditionchange={conditionchange} AfterDelet={AfterDelet} />
         )}
       </span>
+      </div> : <Profile/> }
+      
+
+
+    
     </>
   );
 }
