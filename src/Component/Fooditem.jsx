@@ -8,7 +8,7 @@ function Fooditem({FoodData,AddDataFunction,mood}) {
     <>
 
 
-    <div className='allinone' style={mood ? {backgroundColor:'white',}:{backgroundColor:'#18181b'}}>
+    <div className='allinone' style={mood ? {backgroundColor:' #f4f4f4'}:{backgroundColor:'#18181b'}}>
        {FoodData.map((dataele)=>{
         return<Foodcard key={dataele.id} dataele={dataele} AddDataFunction={AddDataFunction}/>
        })}

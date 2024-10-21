@@ -38,7 +38,7 @@ function Cart({conditionchange,addCartData,AfterDelet}) {
 
         <div className="totalprice">
           Item:{addCartData.length}<br />
-          Total Amount: {totalPrice+totalP} <br />
+          Total Amount: {totalPrice+totalP} ₹<br />
           <hr />
           <button className="Checkout">Checkout</button>
         </div>

@@ -8,7 +8,7 @@ import { FaShield } from "react-icons/fa6";
 function HeroSection({mood,handalscroll}) {
   return (
     <>
-        <div className="heroSection" style={mood ? {backgroundColor:'white',color:'black'}:{backgroundColor:'#18181b',color:'white'}}>
+        <div className="heroSection" style={mood ? {backgroundColor:' #f4f4f4',color:'black'}:{backgroundColor:'#18181b',color:'white'}}>
 
         <div className="part">
           <div className="names">
