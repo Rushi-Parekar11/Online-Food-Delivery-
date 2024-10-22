@@ -5,6 +5,7 @@ import { FaVanShuttle } from "react-icons/fa6";
 import { IoChevronForwardOutline } from "react-icons/io5";
 import { FaShield } from "react-icons/fa6";
 
+
 function HeroSection({mood,handalscroll}) {
   return (
     <>
