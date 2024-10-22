@@ -2,8 +2,6 @@ import React, { useState } from 'react'
  import "../Styles/Foodcard.css"
 
 function Foodcard({dataele,AddDataFunction}) {
-
-  
   return (
 
 <>
